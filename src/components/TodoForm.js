@@ -20,7 +20,9 @@ class TodoForm extends React.Component {
     // it's using the addTodo funct from App.js and passing this.state.item as an argument
     handleSubmit = (evt) => {
         evt.preventDefault();
+        this.setState({ item: '' });
         this.props.addTodo(this.state.item)
+
     }
 
     // function for clearing the form after completing lives in App.js

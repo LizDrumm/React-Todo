@@ -31,20 +31,23 @@ class App extends React.Component {
     super();
     this.state = {
       list : toDoList,
+      
     };
   }
 // this add/submit function will add a todo item to the array 
   // the function needs to create a new item, so it must 'set-up' a skeleton for where item will live
   addTodo = (todoItem) => {
+    e.preventDefault();
     const newTodo = { // new item home and what 'rooms' it has
       item: todoItem,
-      id: new Date(),
+      id: Date.now(),
       done: false
     };
     // using the setState func to update the state with the newTodo item
     this.setState({
-      list: [...this.state.list, newTodo]
+      list: [...this.state.list, newTodo],
     });
+ 
   };
 
   // this clear function will clear all todo items that have been switched to done
